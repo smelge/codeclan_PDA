@@ -68,8 +68,12 @@ Calculator.prototype = {
     }
     // replace the previous total with the current running total and flag that a
     // new total has been calculated
+    if (isFinite(this.runningTotal) == true){
+      this.previousTotal = this.runningTotal;
+    } else {
+      this.runningTotal = 'Not a Number';
+    }
 
-    this.previousTotal = this.runningTotal;
     this.newTotal = true;
   },
 
